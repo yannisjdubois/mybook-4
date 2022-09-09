@@ -9,10 +9,10 @@ class Firebase {
         this.firestore = firestore ();
     }
 
-    getCategories = () => this.firestore.collection("Categories").get();
-    getArticles = () => this.firestore.collection("Articles").get();
+    getCategories = () => this.firestore.collection("CategoriesYannis").get();
+    getArticles = () => this.firestore.collection("ArticlesYannis").get();
 
     //Récupérere un article
-    getArticleById = (id) => this.firestore.collection("Articles").doc(id).get();
+    getArticleById = (id) => this.firestore.collection("ArticlesYannis").doc(id).get();
 }
 export default Firebase;
