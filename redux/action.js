@@ -28,12 +28,12 @@ export const addPanier = (panier) => ({
     payload: panier
 });
 
-export const removeOnePanier = (panier) => ({
+export const removeOnePanier = (item) => ({
     type: REMOVE_ONE_PANIER,
-    payload: [panier]
+    payload: item
 });
 
-export const removePanier = () => ({
+export const removePanier = (panier) => ({
     type: REMOVE_PANIER,
     payload: []
 });
