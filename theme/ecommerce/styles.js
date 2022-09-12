@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
 
 
-    /* Style Header */
+    /* Styles Header */
 
     headerAccueil: {
         height:50,
@@ -117,6 +117,27 @@ export const styles = StyleSheet.create({
           fontSize:18,
           color:"black",
           fontWeight:'500',
+        },
+
+
+
+        /* Styles Détails Articles */
+
+        panier: {
+            backgroundColor:colors.primary,
+            borderRadius:10,
+            padding:5,
+            marginTop:10,
+            width:200,
+            height:40,
+            alignSelf:'flex-end'
+      
+        },
+      
+        textpanier: {
+        color:'black',
+        fontSize:18,
+        textAlign:'center'
         },
 })
 

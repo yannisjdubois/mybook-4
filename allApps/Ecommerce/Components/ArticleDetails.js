@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import {Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addPanier } from '../../../redux/action'
+import { styles } from '../../../theme/ecommerce/styles'
 
 const ArticleDetails = ({article}) => {
 
@@ -39,39 +40,3 @@ const ArticleDetails = ({article}) => {
 }
 
 export default ArticleDetails
-
-const styles = StyleSheet.create({
-    panier: {
-        backgroundColor:'#e9b87c',
-        borderRadius:10,
-        padding:5,
-        marginTop:10,
-        width:200,
-        height:40,
-        alignSelf:'flex-end'
-  
-      },
-  
-      textpanier: {
-        color:'black',
-        fontSize:18,
-        textAlign:'center'
-      },
-  
-      headerAccueil: {
-        height:50,
-        width:"100%",
-        backgroundColor:'#e9b87c',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems:"center",
-        padding:10,
-  },
-  
-      nomHeader: {
-      fontSize:18,
-      color:'black',
-      alignSelf:'center'
-      },
-  
-})
