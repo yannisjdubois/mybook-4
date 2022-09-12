@@ -24,7 +24,7 @@ const RenderArticle = ({article}) => {
             <Text style={styles.textArticle}>
                 {article.nom} 
             </Text>
-            <Text style={styles.prix}>{article.prix}€            Qte:{article.quantite}</Text>
+            <Text style={styles.prix}>{article.prix}€            Qte: {article.quantite}</Text>
         </TouchableOpacity>
         
     )

@@ -115,6 +115,7 @@ export const styles = StyleSheet.create({
           fontSize:18,
           color:"black",
           fontWeight:'500',
+          textAlign:'center'
         },
 
 
