@@ -12,6 +12,33 @@ export const styles = StyleSheet.create({
     },
 
 
+    /* Style Header */
+
+    headerAccueil: {
+        height:50,
+        width:"100%",
+        backgroundColor: colors.primary,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems:"center",
+        padding:10,
+    },
+
+    nomHeader: {
+    fontSize:18,
+    color:'black',
+    alignSelf:'center'
+    },
+
+    headerZoneDroite: {
+    flexDirection:'row',
+    },
+
+    iconePanier: {
+    paddingRight:5
+    },
+
+
 
     /* Styles Categories */
 
@@ -29,7 +56,7 @@ export const styles = StyleSheet.create({
       touchCategorie: {
         backgroundColor: colors.primary,
         marginLeft: 10,
-        padding: 10,
+        paddingVertical: 10,
         borderRadius: 30,
         height: 45,
         width: 150,
@@ -40,6 +67,7 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontWeight: '500',
         textAlign: 'center',
+        textTransform: 'capitalize',
       },
     
       
@@ -71,7 +99,8 @@ export const styles = StyleSheet.create({
           color:"black",
           fontWeight:'500',
           marginBottom:5,
-          textAlign:"center"
+          textAlign:"center",
+          textTransform: 'capitalize',
         },
       
         header: {

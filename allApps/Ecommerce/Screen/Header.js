@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {Text, View } from 'react-native'
 import React from 'react'
 import { Icon } from "@rneui/themed";
 import { useNavigation } from '@react-navigation/native';
+import { styles } from '../../../theme/ecommerce/styles';
 
 const Header = () => {
     const navigation = useNavigation();
@@ -18,30 +19,3 @@ const Header = () => {
 }
 
 export default Header
-
-const styles = StyleSheet.create({
-    headerAccueil: {
-            height:50,
-            width:"100%",
-            backgroundColor:'#e9b87c',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems:"center",
-            padding:10,
-    },
-
-    nomHeader: {
-      fontSize:18,
-      color:'black',
-      alignSelf:'center'
-    },
-
-    headerZoneDroite: {
-      flexDirection:'row',
-    },
-
-    iconePanier: {
-      paddingRight:5
-    }
-
-})
