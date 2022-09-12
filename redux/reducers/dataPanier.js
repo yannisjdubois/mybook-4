@@ -21,6 +21,7 @@ export default function (state = initStatePanier, action) {
         // 1 - Rechercher la position de l'élément
         // 2 - Supprimer l'élément dans le tableau
 
+        
         return state.filter(item => item.id != action.payload.id) ;
         
 

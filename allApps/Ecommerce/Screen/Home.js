@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Categories from '../Components/Categories'
-
 import Articles from '../Components/Articles'
+import { styles } from '../../../theme/ecommerce/styles'
 
 const Home = () => {
   return (
@@ -16,15 +16,3 @@ const Home = () => {
 }
 
 export default Home
-
-const styles = StyleSheet.create({
-
-    content: {
-        flex:1,
-        backgroundColor:'white'
-    },
-
-    
-
-    
-})

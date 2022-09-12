@@ -1,8 +1,10 @@
-import {StyleSheet, Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import { useSelector } from 'react-redux';
-
 import { useNavigation } from '@react-navigation/native';
+import { styles } from '../../../theme/ecommerce/styles';
+
+
 
 const RenderArticle = ({article}) => {
 
@@ -35,7 +37,7 @@ const Articles = () => {
   console.log("dataArticle:", dataArticle)
 
   return (
-    <View style={styles.content}>
+    <View style={styles.ArticleContent}>
       <Text style={styles.title}>Articles</Text>
 
       <FlatList
@@ -54,51 +56,3 @@ const Articles = () => {
 };
 
 export default Articles;
-
-const styles = StyleSheet.create({
-  content: {
-  flex:1,
-  margin:10
-  },
-
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color:'black',
-  },
-
-  touchArticle: {
-    backgroundColor:'#e9b87c',
-    margin:5,
-    padding:10,
-    borderRadius:8,
-    height:250,
-    width:160,
-  },
-
-  textArticle: {
-    fontSize:18,
-    color:"black",
-    fontWeight:'500',
-    marginBottom:5,
-    textAlign:"center"
-  },
-
-  header: {
-    backgroundColor:"#e9b87c"
-  },
-
-  image: {
-    borderRadius:5,
-    height: 170,
-     width: 140,
-     marginBottom:5
-  },
-  prix: {
-    fontSize:18,
-    color:"black",
-    fontWeight:'500',
-  },
-
- 
-});

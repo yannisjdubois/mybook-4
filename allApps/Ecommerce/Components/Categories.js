@@ -1,6 +1,7 @@
-import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useSelector} from 'react-redux';
+import { styles } from '../../../theme/ecommerce/styles';
 
 import Header from '../Screen/Header';
 
@@ -20,8 +21,8 @@ const Categories = () => {
   return (
     <View>
       <Header />
-      <View style={styles.content}>
-        <Text style={styles.title}>Catégories</Text>
+      <View style={styles.CategoryContent}>
+        <Text style={styles.CategoryTitle}>Catégories</Text>
 
         <FlatList
           data={dataCategorie}
@@ -35,36 +36,3 @@ const Categories = () => {
 };
 
 export default Categories;
-
-const styles = StyleSheet.create({
-  content: {
-    width: '100%',
-  },
-
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'black',
-    margin: 10,
-  },
-
-  touchCategorie: {
-    backgroundColor: '#e9b87c',
-    marginLeft: 10,
-    padding: 10,
-    borderRadius: 30,
-    height: 45,
-    width: 150,
-  },
-
-  textCategorie: {
-    fontSize: 17,
-    color: 'black',
-    fontWeight: '500',
-    textAlign: 'center',
-  },
-
-  
-
-
-});
