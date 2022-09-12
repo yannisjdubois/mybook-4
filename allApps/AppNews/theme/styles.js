@@ -86,7 +86,7 @@ export const styles = StyleSheet.create({
     },
 
     news: {
-        color: 'purple',
+        color: '#26a69a',
         fontSize:25
     },
 

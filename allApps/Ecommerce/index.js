@@ -102,7 +102,7 @@ const App = () => {
        
       tabBarActiveTintColor: "black",
       tabBarInactiveTintColor: "black",
-      tabBarActiveBackgroundColor: '#e9b87c',
+      tabBarActiveBackgroundColor: '#26a69a',
       tabBarInactiveBackgroundColor: 'white',
 
       tabBarStyle: {

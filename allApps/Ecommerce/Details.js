@@ -29,7 +29,7 @@ const Details = ({route}) => {
 
     setTimeout(() => {
 
-      setArticle (rqArticle.data());
+      setArticle ({id : id, ...rqArticle.data()});
       setLoad(false)
 
     }, 3000);

@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   contentPanier: {
     width:'100%',
     height:100,
-    backgroundColor:'red',
+    backgroundColor:'#26a69a',
     padding:5,
     margin:5,
     borderRadius:10,
