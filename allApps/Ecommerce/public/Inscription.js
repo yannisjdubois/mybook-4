@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Button, Input, Icon } from "@rneui/themed";
 
 import Firebase from '../../../firebaseContext';
+import Connexion from './Connexion';
 
 const Inscription = () => {
 
@@ -21,7 +22,7 @@ const Inscription = () => {
       const save = () => {
         console.log("save", email, motDePasse )
 
-        firebase.auth()
+        auth()
         .createUserWithEmailAndPassword(email, motDePasse)
         .then(() => {
           console.log('User account created & signed in!');
@@ -96,11 +97,10 @@ const Inscription = () => {
             marginVertical: 10,
           }}
           titleStyle={{ fontWeight: 'bold' }}
-          onPress={save}
         />
 
       <Button
-        onPress={goToConnexion}
+        onPress={save}
         title="Pas encore de compte ? Je m'inscris !"
         type="clear"
         />

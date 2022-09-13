@@ -1,11 +1,12 @@
 import React, {useContext, useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import auth from '@react-native-firebase/auth';
+
 import {FirebaseContext} from '../../firebaseContext';
 import { useDispatch } from 'react-redux';
 
-import { addCategorie } from '../../redux/action';
-import { addArticle } from '../../redux/action';
+import { addArticle,addCategorie, editUser } from '../../redux/action';
 
 import Home from './Screen/Home';
 import Setting from './Screen/Setting';
@@ -93,10 +94,18 @@ const App = () => {
     }
 }
 
+  const authStateChanged = () => {
+    console.log('authStateChanged user', user) ;
+    dispatch(editUser(user)) ;
+  }
+
   useEffect (() => {
 
     initCategories ();
     initArticles ();
+
+    const subscriber = auth().onAuthStateChanged(authStateChanged);
+    return subscriber; // unsubscribe on unmount
 
   }, [])
 
