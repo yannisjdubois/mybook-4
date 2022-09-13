@@ -9,6 +9,8 @@ import { addArticle } from '../../redux/action';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Details from './Details';
 import Panier from './Screen/Panier';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -111,9 +113,31 @@ const App = () => {
 
     }}>
 
-      <Tab.Screen  name="Accueil" component={Accueil}/>
-      <Tab.Screen  name="Panier" component={Panier}/>
-      <Tab.Screen name="Compte" component={Setting} />
+      <Tab.Screen 
+                name="Accueil"
+                component={Accueil}
+                options={{
+                  tabBarIcon: (tabInfo) => (
+                    <MaterialIcons name="home" size={18} color={tabInfo.tintColor} />
+                  )}}
+      />
+      <Tab.Screen
+                  name="Panier"
+                  component={Panier}
+                  options={{
+                    tabBarIcon: (tabInfo) => (
+                      <MaterialIcons name="shopping-cart" size={18} color={tabInfo.entypo} />
+                    )}}
+        />
+                  
+      <Tab.Screen
+                  name="Compte"
+                  component={Setting}
+                  options={{
+                    tabBarIcon: (tabInfo) => (
+                      <MaterialIcons name="account" size={18} color={tabInfo.MaterialCommunityIcons} />
+                    )}}
+      />
 
     </Tab.Navigator>
 
