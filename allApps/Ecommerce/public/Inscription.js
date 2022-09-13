@@ -8,9 +8,15 @@ const Inscription = () => {
     const navigation = useNavigation() ;
 
     const [AffMotDePasse, setAffMotDePasse] = useState(true)
+    const [email, setEmail] = useState()
+    const [motDePasse, setMotDePasse] = useState()
 
     const goToConnexion = () => {
         navigation.navigate('Connexion') ;
+      }
+
+      const save = () => {
+        console.log("save", email, motDePasse )
       }
 
   return (
@@ -19,6 +25,7 @@ const Inscription = () => {
 
       <Input
       placeholder='Votre e-mail'
+      onChangeText={value => setEmail(value)}
       leftIcon={
             <Icon
             name='alternate-email'
@@ -31,6 +38,7 @@ const Inscription = () => {
 
       <Input
       placeholder='Votre mot de passe'
+      onChangeText={value => setMotDePasse(value)}
       secureTextEntry={AffMotDePasse}
       leftIcon={
             <Icon
@@ -53,8 +61,29 @@ const Inscription = () => {
 
       <Button
         onPress={goToConnexion}
-        title="Je me connecte !"
-        type="clear" />
+        title="Je me connecte"
+        type="clear"
+        buttonStyle={{
+            backgroundColor: 'black',
+            borderWidth: 2,
+            borderColor: 'white',
+            borderRadius: 30,
+          }}
+          containerStyle={{
+            width: -100,
+            marginHorizontal: 50,
+            marginVertical: 10,
+          }}
+          titleStyle={{ fontWeight: 'bold' }}
+          onPress={save}
+        />
+
+      <Button
+        onPress={goToConnexion}
+        title="Pas encore de compte ? Je m'inscris !"
+        type="clear"
+        />
+        
     </View>
   )
 }
