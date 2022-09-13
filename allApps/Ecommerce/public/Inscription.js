@@ -1,7 +1,9 @@
 import { View, Text } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Button, Input, Icon } from "@rneui/themed";
+
+import Firebase from '../../../firebaseContext';
 
 const Inscription = () => {
 
@@ -10,6 +12,7 @@ const Inscription = () => {
     const [AffMotDePasse, setAffMotDePasse] = useState(true)
     const [email, setEmail] = useState()
     const [motDePasse, setMotDePasse] = useState()
+    const firebase = useContext(Firebase)
 
     const goToConnexion = () => {
         navigation.navigate('Connexion') ;
@@ -17,6 +20,24 @@ const Inscription = () => {
 
       const save = () => {
         console.log("save", email, motDePasse )
+
+        firebase.auth()
+        .createUserWithEmailAndPassword(email, motDePasse)
+        .then(() => {
+          console.log('User account created & signed in!');
+        })
+        .catch(error => {
+
+        //   if (error.code === 'auth/email-already-in-use') {
+        //     console.log('That email address is already in use!');
+        //   }
+      
+        //   if (error.code === 'auth/invalid-email') {
+        //     console.log('That email address is invalid!');
+        //   }
+      
+          console.error(error);
+        });
       }
 
   return (
