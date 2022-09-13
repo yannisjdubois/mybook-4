@@ -42,7 +42,7 @@ const Inscription = () => {
         }
       rightIcon={
             <Icon
-            name='eye-with-line'
+            name={AffMotDePasse?'eye-with-line':'eye'}
             type='entypo'
             onPress={()=>setAffMotDePasse(!AffMotDePasse)}
             size={24}
