@@ -1,8 +1,9 @@
-import {Text, View, TouchableOpacity } from 'react-native'
+import {Text, View, TouchableOpacity, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addPanier } from '../../../redux/action'
 import { styles } from '../../../theme/ecommerce/styles'
+import { Image } from '@rneui/themed';
 
 const ArticleDetails = ({article}) => {
 
@@ -27,13 +28,21 @@ const ArticleDetails = ({article}) => {
     // // <Text style = {styles.prix}> {article.prix}€ </Text>
     // // <Text style = {styles.description}>{article.description}</Text>
 
-    <View>
-     <Text style = {styles.nom}> {article.nom} </Text>
-    <View>
-      <TouchableOpacity style = {styles.panier} onPress = {ajouter}>
-        <Text style = {styles.textpanier}>Ajouter à votre panier</Text> 
-      </TouchableOpacity>
-  </View>
+
+
+    <View style = {styles.articleDetails}>
+        <Image
+    style={styles.imageDetails}
+    source={{uri: article.image}} 
+    PlaceholderContent={<ActivityIndicator />}
+  />
+        <Text style = {styles.nom}> {article.nom} </Text>
+        <Text style={styles.prixDetails}>{article.prix}€            Qte: {article.quantite}</Text>
+      <View style = {styles.articleDetails}>
+          <TouchableOpacity style = {styles.panier} onPress = {ajouter}>
+            <Text style = {styles.textpanier}>Ajouter à votre panier</Text>
+          </TouchableOpacity>
+      </View>
   </View>
 
   )

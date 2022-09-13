@@ -122,6 +122,17 @@ export const styles = StyleSheet.create({
 
         /* Styles Détails Articles */
 
+        articleDetails : {
+          alignItems: 'center'
+        },
+
+        imageDetails: {
+          borderRadius:5,
+          height: 300,
+           width: 400,
+           marginBottom:5
+        },
+
         panier: {
             backgroundColor:colors.primary,
             borderRadius:10,

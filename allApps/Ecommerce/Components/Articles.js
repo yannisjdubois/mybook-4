@@ -1,4 +1,4 @@
-import {Text, View, FlatList, TouchableOpacity, Image} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
@@ -20,7 +20,11 @@ const RenderArticle = ({article}) => {
       
         <TouchableOpacity style={styles.touchArticle} onPress={onPressArticle}>
 
-            <Image style={styles.image} source={{uri: article.image}} />
+            <Image
+              style={styles.image}
+              source={{uri: article.image}} 
+              PlaceholderContent={<ActivityIndicator />}
+            />
             <Text style={styles.textArticle}>
                 {article.nom} 
             </Text>
