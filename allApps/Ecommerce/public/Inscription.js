@@ -31,7 +31,7 @@ const Inscription = () => {
 
       <Input
       placeholder='Votre mot de passe'
-      secureTextEntry={true}
+      secureTextEntry={AffMotDePasse}
       leftIcon={
             <Icon
             name='lock'
@@ -44,6 +44,7 @@ const Inscription = () => {
             <Icon
             name='eye-with-line'
             type='entypo'
+            onPress={()=>setAffMotDePasse(!AffMotDePasse)}
             size={24}
             color='black'
             />
