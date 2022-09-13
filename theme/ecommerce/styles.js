@@ -149,6 +149,28 @@ export const styles = StyleSheet.create({
         fontSize:18,
         textAlign:'center'
         },
+
+        /* Styles Panier */
+
+        contentPanier: {
+          width:'100%',
+          height:100,
+          backgroundColor:'#26a69a',
+          padding:5,
+          margin:5,
+          borderRadius:10,
+          alignSelf:'center'
+          
+        },
+      
+        nomPanier: {
+          color:'white',
+          fontSize:25
+        },
+      
+        prixPanier: {
+          color:"black"
+        },
 })
 
 

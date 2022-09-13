@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, FlatList, Button } from 'react-native'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'
+import { styles } from '../../../theme/ecommerce/styles'
 
 
 const PanierItem = ({item}) => {
@@ -17,11 +18,11 @@ const PanierItem = ({item}) => {
 
     <View style = {styles.contentPanier}>
 
-      <Text style = {styles.nom}>
+      <Text style = {styles.nomPanier}>
         {item.nom}
       </Text>
 
-      <Text style = {styles.prix}>
+      <Text style = {styles.prixPanier}>
         {item.prix}€
       </Text>
 
@@ -67,28 +68,3 @@ const Panier = () => {
 }
 
 export default Panier
-
-const styles = StyleSheet.create({
-
-  contentPanier: {
-    width:'100%',
-    height:100,
-    backgroundColor:'#26a69a',
-    padding:5,
-    margin:5,
-    borderRadius:10,
-    alignSelf:'center'
-    
-  },
-
-  nom: {
-    color:'white',
-    fontSize:25
-  },
-
-  prix: {
-    color:"black"
-  },
-
-
-})

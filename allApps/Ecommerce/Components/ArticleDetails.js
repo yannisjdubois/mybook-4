@@ -16,19 +16,6 @@ const ArticleDetails = ({article}) => {
 
     }
   return (
-    // {/* <View style={styles.headerAccueil}>
-    //   <Icon  name="arrow-back" color="black" onPress={() => navigation.navigate('Home')} />
-    //   <Text style={styles.nomHeader}>Détails</Text>
-    //   <Icon name="search" color="black" onPress={() => navigation.navigate('')}/>  
-    //    </View> */}
-
-    // // <View style = {styles.content}>
-    // // <Image style={styles.image} source={{uri: article.image}} />
-    // // <Text style = {styles.nom}> {article.nom} </Text>
-    // // <Text style = {styles.prix}> {article.prix}€ </Text>
-    // // <Text style = {styles.description}>{article.description}</Text>
-
-
 
     <View style = {styles.articleDetails}>
         <Image

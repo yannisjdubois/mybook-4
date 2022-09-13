@@ -1,4 +1,4 @@
-import { ADD_CATEGORIE, ADD_ARTICLE, EDIT_LOGIN, ADD_PANIER, REMOVE_PANIER, REMOVE_ONE_PANIER } from "./type";
+import { ADD_CATEGORIE, ADD_ARTICLE, EDIT_LOGIN, ADD_PANIER, REMOVE_PANIER, REMOVE_ONE_PANIER, EDIT_USER } from "./type";
 
 import { EDIT_NOMBRE } from "./type";
 
@@ -33,7 +33,12 @@ export const removeOnePanier = (item) => ({
     payload: item
 });
 
-export const removePanier = (panier) => ({
+export const removePanier = () => ({
     type: REMOVE_PANIER,
     payload: []
+});
+
+export const editUser = (user) => ({
+    type: EDIT_USER,
+    payload: user
 });

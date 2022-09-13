@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Public = () => {
+const Inscription = () => {
   return (
     <View>
-      <Text>Public</Text>
+      <Text>Inscription</Text>
     </View>
   )
 }
 
-export default Public
+export default Inscription
