@@ -135,7 +135,7 @@ const App = () => {
                   component={Setting}
                   options={{
                     tabBarIcon: (tabInfo) => (
-                      <MaterialIcons name="account" size={18} color={tabInfo.MaterialCommunityIcons} />
+                      <MaterialIcons name="supervisor-account" size={18} color={tabInfo.materialicons} />
                     )}}
       />
 
