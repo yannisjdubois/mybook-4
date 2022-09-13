@@ -155,7 +155,7 @@ export const styles = StyleSheet.create({
         contentPanier: {
           width:'100%',
           height:100,
-          backgroundColor:'#26a69a',
+          backgroundColor : colors.primary,
           padding:5,
           margin:5,
           borderRadius:10,

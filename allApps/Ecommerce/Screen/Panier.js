@@ -28,7 +28,7 @@ const PanierItem = ({item}) => {
 
       <Button
         onPress={removeOne}
-        title='Supp.'
+        title='Supprimer'
       />
 
     </View>

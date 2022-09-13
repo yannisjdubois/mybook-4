@@ -10,9 +10,7 @@ const Setting = () => {
   console.log('dataUser', dataUser)
 
   return (
-    <View>
-      <Text>Setting</Text>
-    </View>
+    dataUser?<Private/>:<Public/>
   )
 }
 

@@ -1,12 +1,14 @@
 import React, {useContext, useEffect} from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from './Screen/Home';
-import Setting from './Screen/Setting';
 import {FirebaseContext} from '../../firebaseContext';
 import { useDispatch } from 'react-redux';
+
 import { addCategorie } from '../../redux/action';
 import { addArticle } from '../../redux/action';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import Home from './Screen/Home';
+import Setting from './Screen/Setting';
 import Details from './Details';
 import Panier from './Screen/Panier';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -20,8 +22,8 @@ const Accueil = () => {
   return (
     
     <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen name='Home' component ={Home}/>
-    <Stack.Screen name='Details' component ={Details}/>
+      <Stack.Screen name='Home' component ={Home}/>
+      <Stack.Screen name='Details' component ={Details}/>
     </Stack.Navigator>
   )
 
