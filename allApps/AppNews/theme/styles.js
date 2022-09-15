@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     cards: {
         height:450,
         width:340,
-        backgroundColor:"purple",
+        backgroundColor:"#26a69a",
         margin:10,
         marginRight:10,
         borderRadius:5,
