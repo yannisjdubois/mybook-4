@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Avatar, BackgroundImage, Button, ListItem } from '@rneui/base'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'
@@ -50,6 +50,8 @@ const Panier = () => {
 
   const {dataPanier} = useSelector (state => state);
 
+  // Importation de useState en ajoutant React sans le faire globalement
+  // Ajout automatique en global grâce à des extensions
   const [ prix, setPrix ] = React.useState() ;
 
   console.log('dataPanier:', dataPanier)
@@ -61,6 +63,26 @@ const Panier = () => {
 
     console.log("remove")
   }
+
+  const totalPanier = () => {  // calcule la somme de Panier
+
+    let total = 0 ; // la fonction let est mutable dans le temps
+    dataPanier.forEach(element =>
+      {
+        total = total + element.prix ;
+        console.log("total :", total) ;
+      })
+
+    setPrix(total) ;  // setPrix permet qu'il s'affiche
+  }
+
+
+  useEffect(()=>{   // gère le cycle de vie de l'application 
+
+    totalPanier() ;
+
+    // On ajoute la variable totalPanier en observable (entre crochet) afin qu'il s'actualise
+  },[dataPanier])
 
   return (
     <View style={styles.container}>
