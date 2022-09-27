@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'
 
 import PanierItem from '../Components/PanierItem'
-/* import { styles } from '../../../theme/ecommerce/styles' */ 
+import { styles } from '../../../theme/ecommerce/styles'
 
 
 
@@ -49,6 +49,9 @@ import PanierItem from '../Components/PanierItem'
 const Panier = () => {
 
   const {dataPanier} = useSelector (state => state);
+
+  const [ prix, setPrix ] = React.useState() ;
+
   console.log('dataPanier:', dataPanier)
   const dispatch = useDispatch() ;
 
@@ -67,10 +70,10 @@ const Panier = () => {
         renderItem = {({item}) => <PanierItem item = {item}/>}
         keyExtractor = {item => item.id}/>
 
-      <View style={styles.bottom}>
+      <View style={styles.bottomPanier}>
 
-        <View style={styles.prix}>
-          <Text>73e</Text>
+        <View style={styles.prixPanier}>
+          <Text style={styles.txtPrixPanier}> {prix} euros</Text>
         </View>
 
         <View style={styles.acheter}>
@@ -89,30 +92,3 @@ const Panier = () => {
 
 export default Panier
 
-const styles = StyleSheet.create({
-  container : {
-    flex: 1,
-    backgroundColor: '#00756c',
-    justifyContent: 'space-between',
-  },
-
-  bottom : {
-    flexDirection:'row',
-    height: 75,
-    backgroundColor: 'white',
-    justifyContent: 'space-around',
-  },
-  prix : {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  acheter : {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  containerBoutonAcheter : {
-    color: 'white',
-  },
-})

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, Button } from 'react-native'
+import { Text, View, FlatList, Button } from 'react-native'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'

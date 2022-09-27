@@ -150,27 +150,73 @@ export const styles = StyleSheet.create({
         textAlign:'center'
         },
 
+
         /* Styles Panier */
 
-        contentPanier: {
-          width:'100%',
-          height:100,
-          backgroundColor : colors.primary,
-          padding:5,
-          margin:5,
-          borderRadius:10,
-          alignSelf:'center'
+        // contentPanier: {
+        //   width:'100%',
+        //   height:100,
+        //   backgroundColor : colors.primary,
+        //   padding:5,
+        //   margin:5,
+        //   borderRadius:10,
+        //   alignSelf:'center'
           
+        // },
+      
+        // nomPanier: {
+        //   color:'white',
+        //   fontSize:25
+        // },
+      
+        // prixPanier: {
+        //   color:"black"
+        // },
+
+        container : {
+          flex: 1,
+          backgroundColor: '#00756c',
+          justifyContent: 'space-between',
         },
       
-        nomPanier: {
-          color:'white',
-          fontSize:25
+        bottomPanier : {
+          flexDirection:'row',
+          height: 75,
+          backgroundColor: 'white',
+          justifyContent: 'space-around',
         },
-      
-        prixPanier: {
-          color:"black"
+        prixPanier : {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
         },
+
+        txtPrixPanier : {
+          fontSize: 24,
+          color: colors.textSecondary,
+          fontWeight: '700' ,
+        },
+        acheter : {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        },
+        containerBoutonAcheter : {
+          color: 'white',
+        },
+
+
+
+
+        /* Styles PanierItem */
+
+        ListItemTitles: {
+          color:colors.textPrimary,
+        },
+
+
+
+
 })
 
 

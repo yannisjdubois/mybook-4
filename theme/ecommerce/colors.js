@@ -7,7 +7,7 @@ export const colors = {
     secondary: 'white',
 
     textPrimary: '#000000',
-    textSecondary: '#000000',
+    textSecondary: 'brown',
 
     bgColorPrimary : '#ccc',
     bgColorSecondary : 'lightblue',

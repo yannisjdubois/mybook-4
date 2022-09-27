@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 import { BackgroundImage, Button, ListItem, Avatar } from '@rneui/base'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeOnePanier } from '../../../redux/action'
+import { styles } from '../../../theme/ecommerce/styles'
 
 const PanierItem = ({item}) => {
 
@@ -27,7 +28,8 @@ const PanierItem = ({item}) => {
     >
         <Avatar title={item.nom[0]} source={{ uri: item.image }} />
     <ListItem.Content>
-        <ListItem.Title>{item.nom}</ListItem.Title>
+        <ListItem.Title style={styles.ListItemTitles}>{item.nom}</ListItem.Title>
+        <ListItem.Subtitle style={styles.ListItemTitles}>{item.prix} euros</ListItem.Subtitle>
     </ListItem.Content>
     <ListItem.Chevron />
     </ListItem.Swipeable>
@@ -36,4 +38,3 @@ const PanierItem = ({item}) => {
 
 export default PanierItem
 
-const styles = StyleSheet.create({})
