@@ -20,7 +20,7 @@ export default function (state = initStatePanier, action) {
                 return [...state, item]
                 
             } else {
-                
+                return state ;
             }
 
             // return nextState
