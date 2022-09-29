@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { Avatar, BackgroundImage, Button, ListItem } from '@rneui/base'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'
+import firestore from '@react-native-firebase/firestore';
 
 import PanierItem from '../Components/PanierItem'
 import { styles } from '../../../theme/ecommerce/styles'
@@ -52,7 +53,7 @@ const Panier = () => {
 
   // Importation de useState en ajoutant React sans le faire globalement
   // Ajout automatique en global grâce à des extensions
-  const [ prix, setPrix ] = React.useState() ;
+  const [ montantTotal, setMontantTotal ] = React.useState() ;
 
   console.log('dataPanier:', dataPanier)
   const dispatch = useDispatch() ;
@@ -73,7 +74,19 @@ const Panier = () => {
         console.log("total :", total) ;
       })
 
-    setPrix(total) ;  // setPrix permet qu'il s'affiche
+      setMontantTotal(total) ;  // setPrix permet qu'il s'affiche
+  }
+
+  const addCommande = () => {
+
+    console.log("addCommande")
+
+    const commande = {
+                  etat:false,
+                  total:montantTotal,
+                  date:Date.now()
+    }
+
   }
 
 
@@ -95,14 +108,15 @@ const Panier = () => {
       <View style={styles.bottomPanier}>
 
         <View style={styles.prixPanier}>
-          <Text style={styles.txtPrixPanier}> {prix} euros</Text>
+          <Text style={styles.txtPrixPanier}> {montantTotal} euros</Text>
         </View>
 
         <View style={styles.acheter}>
           <Button
-          buttonStyle={styles.BoutonAcheter}
-          type="solid"
-          containerStyle={styles.containerBoutonAcheter}
+            buttonStyle={styles.BoutonAcheter}
+            onPress={addCommande}
+            type="solid"
+            containerStyle={styles.containerBoutonAcheter}
           >
             Acheter</Button>
         </View>
