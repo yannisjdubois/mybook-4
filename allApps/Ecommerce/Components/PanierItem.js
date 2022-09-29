@@ -30,6 +30,7 @@ const PanierItem = ({item}) => {
     <ListItem.Content>
         <ListItem.Title style={styles.ListItemTitles}>{item.nom}</ListItem.Title>
         <ListItem.Subtitle style={styles.ListItemTitles}>{item.prix} euros</ListItem.Subtitle>
+        <ListItem.Subtitle style={styles.ListItemTitles}>{item.quantite}</ListItem.Subtitle>
     </ListItem.Content>
     <ListItem.Chevron />
     </ListItem.Swipeable>

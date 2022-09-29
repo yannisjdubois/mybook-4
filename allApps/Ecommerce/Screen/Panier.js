@@ -69,7 +69,7 @@ const Panier = () => {
     let total = 0 ; // la fonction let est mutable dans le temps
     dataPanier.forEach(element =>
       {
-        total = total + element.prix ;
+        total = total + Number(element.prix) * element.quantite ;
         console.log("total :", total) ;
       })
 
