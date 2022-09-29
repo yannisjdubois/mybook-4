@@ -5,28 +5,36 @@ const initStatePanier = [];
 
 export default function (state = initStatePanier, action) {
 
-    if (action.type == ADD_PANIER) {
+    switch (action.type) {
+        case ADD_PANIER :
 
-        // return nextState
+            // return nextState
 
-        return !existItem (state, action.payload.id)?[...state, action.payload]: state
-        
-    } else if (action.type == REMOVE_PANIER) { // vider le panier
+            return !existItem (state, action.payload.id)?[...state, action.payload]: state
+            
+            break;
 
-        return action.payload ;
-        
+        case REMOVE_PANIER : // vider le panier
 
-    } else if (action.type == REMOVE_ONE_PANIER) { // vider un élément du panier
+            return action.payload ;
+            
+            break;
+
+        case REMOVE_ONE_PANIER : // vider un élément du panier
 
         // 1 - Rechercher la position de l'élément
         // 2 - Supprimer l'élément dans le tableau
 
         
         return state.filter(item => item.id != action.payload.id) ;
-        
 
-    } else {
-        
-        return state
+            break;
+    
+        default:
+
+            return state ;
+
+            break;
     }
+
 }
