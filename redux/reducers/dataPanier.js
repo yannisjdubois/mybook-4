@@ -20,7 +20,23 @@ export default function (state = initStatePanier, action) {
                 return [...state, item]
                 
             } else {
-                return state ;
+
+                // find item by id payload for get quantite value
+                const findItem = state.find( item => item.id == action.payload.id) ;
+
+                // find index of item by id payload for get quantite value
+                const indexItem = state.findIndex( item => item.id == action.payload.id) ;
+
+                const newItem = { ...findItem, quantite:findItem.quantite + 1} ;
+
+                
+                // Transformation du state immutable en state mutable avec fonction let
+                let newState = state ;
+
+                // création d'un tableau modifiable afin de modifier la valeur précédente
+                newState[indexItem] = newState ;
+
+                return newState ;
             }
 
             // return nextState
