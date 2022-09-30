@@ -79,13 +79,16 @@ const Panier = () => {
 
   const addCommande = () => {
 
-    console.log("addCommande")
-
     const commande = {
                   etat:false,
                   total:montantTotal,
                   date:Date.now()
     }
+
+    console.log("addCommande", commande)
+
+    // Ajouter une commande à Firebase
+    firestore().collection("Commande").add(commande)
 
   }
 
