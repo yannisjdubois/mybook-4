@@ -4,6 +4,7 @@ import { Avatar, BackgroundImage, Button, ListItem } from '@rneui/base'
 import { useSelector, useDispatch } from 'react-redux'
 import { removePanier, removeOnePanier } from '../../../redux/action'
 import firestore from '@react-native-firebase/firestore';
+import moment from 'moment/moment'
 
 import PanierItem from '../Components/PanierItem'
 import { styles } from '../../../theme/ecommerce/styles'
@@ -82,7 +83,7 @@ const Panier = () => {
     const commande = {
                   etat:false,
                   total:montantTotal,
-                  date:Date.now()
+                  date:moment(new Date()).format()
     }
 
     console.log("addCommande", commande)
