@@ -50,7 +50,7 @@ import { styles } from '../../../theme/ecommerce/styles'
 
 const Panier = () => {
 
-  const {dataPanier} = useSelector (state => state);
+  const {dataPanier, dataUser} = useSelector (state => state);
 
   // Importation de useState en ajoutant React sans le faire globalement
   // Ajout automatique en global grâce à des extensions
@@ -78,18 +78,35 @@ const Panier = () => {
       setMontantTotal(total) ;  // setPrix permet qu'il s'affiche
   }
 
-  const addCommande = () => {
+  // avec async j'attend la création de la commande
+  const addCommande = async () => {
 
-    const commande = {
+    const commandeValue = {
                   etat:false,
                   total:montantTotal,
+
+                  uid: dataUser.uid,
                   date:moment(new Date()).format()
     }
 
-    console.log("addCommande", commande)
+    console.log("dataUser", dataUser.uid) ;
 
     // Ajouter une commande à Firebase
-    firestore().collection("Commande").add(commande)
+    // La constante commande de type away permet de récupérer les données de la commande
+    // Création de ma commande
+    const commande = await firestore().collection("Commandes").add(commandeValue)
+
+    console.log("commande", commande.id) ;
+
+    dataPanier.map(async element=>{
+
+      // Ajouter le contenu de ma commande
+      // Ajout des details du panier dans la sous-collection
+      await firestore().collection("Commandes").doc(commande.id)
+                        .collection("Detail").add(element)
+    })
+
+    remove() ;
 
   }
 
