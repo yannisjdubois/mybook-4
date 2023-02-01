@@ -8,6 +8,7 @@ import Insta from './allApps/Insta/';
 import Tuto from './TutoFlatList/index.js';
 import Details from './allApps/AppNews/components/Details.js';
 import Ecommerce from './allApps/Ecommerce';
+import Tstream from './allApps/Tstream/index.js';
 import store from './redux/store';
 import {Provider} from 'react-redux';
 import auth from '@react-native-firebase/auth';
@@ -46,6 +47,8 @@ const App = () => {
           <Stack.Screen name="AppTuto" component={Tuto} />
 
           <Stack.Screen name="AppTutoFireList" component={TutoFireList} />
+
+          <Stack.Screen name="Tstream" component={Tstream} />
 
           <Stack.Screen options={{headerShown: false}} name="AppEcommerce" component={Ecommerce} />
 
